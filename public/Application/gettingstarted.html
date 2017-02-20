@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/style.css'}">
+    <meta charset="UTF-8">
+    <title>#{get 'title' /}</title>
+</head>
+<body>
+<br> #{get 'message' /}
+<br> #{get 'tested'/}
+<div id="top">
+    <div id="banner"><img src="@{'/public/images/oktober2.png'}"></div>
+    <div id="logonsector">
+        <form  action="proceed" method="post">
+            <p><strong>Логин : </strong>
+                <input type="text"  name="login" value=""></p>
+            <p><strong>Пароль:</strong>
+                <input type="password"  name="password" value=""></p>
+            <input type="submit" name="commit" value="Войти" align="center"><br>
+            <a href="/gettingstarted">Регистрация</a><br><a href="/rememberpasswd" align="center">Вспомнить пароль</a>
+        </form>
+    </div>
+</div>
+<div id="content">
+    <div id="menu">
+    <ul>
+        <li><a href="/about">Об Oktober</a> </li>
+        <li><a href="/rules">Условия</a> </li>
+        <li><a href="/howitworks">Как это работает?</a> </li>
+        <li><a href="/gettingstarted">Стать инвестором</a> </li>
+    </ul>
+</div>
+    <div id="info"> Поздравляю Вас! Вы решили чтото поменять в своей жизни и стать инвестором. Но одного решения мало - нужны еще дейсвия!
+        Вкратце Вам предстоить выполнить следующие шаги:
+        <br>1) Открыть в любом банке банковский счет в евро или долларах США. Это необходимо для того чтобы потом можно получить средства (прибыль) из Хедж Фонда.
+        <br>При открытии данного счета Вам в банке должны предоставить бумажку с реквизитами Вашего счета, а именно: номер счета, swift код банка,
+        адрес банка, а также swift код и адрес банка посредника. Откройте сначала счет в евро пржде чем подавать заявление на становление клиентом хедж фонда!
+        Потом отсканируйте данные реквизиты (скан пригодится в дальнейшем при обработке заявки на становление клиентом).
+        <br>
+        2) Заполните поля приведенные ниже :<br>
+        <form  action="investorrequest" method="post">
+            <p><strong>Фамилия Имя Отчество: </strong>
+                <input type="text"  size="100"name="FIO" value=""></p>
+            <p><strong>Адрес электронной почты: </strong>
+                <input type="text"  size="97"name="email" value=""></p>
+        <!--    <br>Скан документа удостоверящего личность (паспорт или загранпаспорт)
+            <input type="file" name="passport" size="chars">
+            <br>Скан документа, подтверждающий наличие работы
+            <input type="file" name="work" size="chars">
+            <br>Скан документа, подтверждающий доход
+            <input type="file" name="income" size="chars">
+            <br>-->
+            <input type="submit" name="commit" value="Стать инвестором" align="center"><br>
+
+        </form>
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-92220492-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+    <link rel="stylesheet" media="screen" href="stylesheets/style.css">
+    <meta charset="UTF-8">
+    <title>
+      ИТ Стартап Roman1 - IT startup Roman1/FAQ
+		</title>
+    <style>
+      @font-face {
+        font-family: franklin;
+        src: url(font/FranklinGothicHeavy.ttf);
+      }
+      body {
+      background: url(images/carbon_by_xxmironexx-d32g0hs.jpg) repeat-y,
+                  #fc0 url(images/bg-right.png) repeat-y 100% 0;;
+      background-size: cover;
+
+      }
+    </style>
+</head>
+<body >
+
+	<div id="top">
+    <div id="banner">
+			<script src ="js/FiraSansEight_Regular.js"></script>
+			<script src="js/three.js"></script>
+			<script src="https://github.com/mrdoob/three.js/blob/master/examples/js/Detector.js"></script>
+			<script>
+			var text_
+			var text__
+				var text = "aems",
+							height = 3,
+							size = 12,
+							curveSegments = 10,
+							bevelThickness = 1,
+							bevelSize = 0.3,
+							bevelSegments = 3,
+							bevelEnabled = true,
+							font = undefined
+			var renderer = new THREE.WebGLRenderer()
+			renderer.setSize(window.innerWidth*0.75, window.innerHeight/5)
+			document.body.appendChild(renderer.domElement)
+			camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 10, 800);
+			camera.position.set(00, 10, 200);
+			camera.lookAt(new THREE.Vector3(0, 0, 0))
+			var scene = new THREE.Scene()
+			scene.fog	= new THREE.FogExp2( 0xd0e0f0, 0.0025 );
+			var light333 = new THREE.HemisphereLight(0xffffff, 0x101020, 1.5);
+			light333.position.set( 0.75, 1,50, 200 );
+			scene.add(light333);
+			var geometry = new THREE.SphereGeometry( 10, 32, 32 )
+			var material = new THREE.MeshStandardMaterial( )
+			var sphere = new THREE.Mesh( geometry, material )
+			var light = new THREE.PointLight( 0x20ff00, 1, 0,2 )
+			light.position.set( 50, 50, 50 )
+			var light2 = new THREE.PointLight( 0xffffff, 1, 0,2 )
+			light2.position.set( -10, -10, -20 )
+			scene.add( light2 )
+			var light3 = new THREE.PointLight( 0xffffff, 1, 0,2 )
+			light3.position.set( 0, 0, 90 )
+			scene.add( light3 )
+			scene.add( light )
+			var x =0
+			loadFont()
+			render()
+			function render() {
+			requestAnimationFrame( render )
+			x+=0.006
+			renderer.render(scene, camera)
+			camera.position.z = Math.sin(x) * 150;
+			camera.position.x = Math.cos(x) * 150;
+			camera.lookAt(scene.position)
+			}
+			function loadFont() {
+				var loader = new THREE.FontLoader()
+				loader.load( 'font/Arkitech Medium_Medium.json', function ( response ) {
+				font = response
+				createText()
+			} )
+			}
+			function createText() {
+				textGeo = new THREE.TextGeometry( 'Roman1 Tech', {
+					font: font,
+					size: size,
+					height: height,
+					curveSegments:curveSegments,
+					weight: "normal",
+					bevelThickness:bevelThickness,
+					bevelSize:bevelSize,
+					bevelSegments:bevelSegments,
+					bevelEnabled:bevelEnabled
+			});
+				textGeo.computeBoundingBox();
+				textGeo.computeVertexNormals();
+				var material2 = new THREE.MeshStandardMaterial( )
+				text_ = new THREE.Mesh(textGeo, material2)
+				text_.position.x = -textGeo.boundingBox.max.x/2;
+				text_.castShadow = true;
+				scene.add(text_)
+		}
+		</script>
+		</div>
+      <div id="logonsector">
+            <form  action="login" method="post">
+                <p><strong>Логин : </strong>
+                <input type="text"  name="login" value=""></p>
+                <p><strong>Пароль:</strong>
+                <input type="password"  name="password" value=""></p>
+                <input type="submit" name="commit" value="Войти" align="center"><br>
+            <!--    <a href="/gettingstarted">Регистрация</a><br><a href="/rememberpasswd" align="center">Вспомнить пароль</a>-->
+            </form>
+        </div>
+    </div>
+<div id="content">
+    <div id="menu">
+        <ul>
+            <li><a href="/description">Краткое описание </a> </li>
+            <li><a href="/services">Услуги</a> </li>
+            <li><a href="/faq"> FAQ</a></li>
+            <li><a href="/contacts">Контакты</a></li>
+            <li><a href="/feedback">Оставить заявку</a> </li>
+        </ul>
+    </div>
+    <div id="info"><br><ul>
+      <li> <h4> Что из себя представляет данный сайт? Какие цели у данного стартапа.</h6></li>
+           <p> Данный сайт помогает развитию ИТ технологии и науки в частности, предоставляя любые услуги, которые способен предоставлять
+             на данный момент. По мере развития цели, области, услуги и продукты моргут расширяться.
+      <li> <h4> Какие услуги на данный момент предоставляются?</h6></li>
+          <p> На данный момент предоставляются простые сайты под заказ, возможно написание небольших программ под заказ, в том числе
+            студенческие работы. Оплата принимается биткоинами, Qiwi переводами, WebMoney, банковским переводом.
+          <br>В городе Астрахань может производится ремонт компьютеров, подбор, модернизация комплектующих, а также вопросы связанные с компьютерной
+            безоапасностью и очисткой от вирусов. Оплата такая же что и при удаленном заказе.
+      <li> <h4> Необходима ли предоплата?</h6></li>
+          <p> Предоплата при удаленном заказе необходима, 25% от оговоренной суммы. При ремонте компьютера необходимо оплатить полностью сумму
+             на  необходимые для ремонта запчасти, остальное -  потом.
+      <li> <h4> Даете ли Вы какиенибудь гарантии? </h6></li>
+        <p> Гарантия на физический ремонт, техническое обслуживание 6 месяцев. По окончанию ремонта выдается электронный чек.
+      <li> <h4> Есть ли Вы в соцсетях? </h6></li>
+        <p> Ссылка на мою личную страницу Вконтакте https://vk.com/roland_x, скоро будет группа.
+
+
+    </ul>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+
+@font-face {
+font-family: franklin; /* Гарнитура шрифта */
+src: url(font/FranklinGothicHeavy.ttf); /* Путь к файлу со шрифтом */
+}
+#menu {
+    background-color: 	#252626;
+    width: 20%;
+    position: absolute;
+    height: 100%;
+}
+#menu ul { list-style: none; }
+#menu a {
+    font-family: franklin;
+    font-size: 120%;
+    text-decoration: none; /* Отменяем подчеркивание у ссылки */
+   }
+#menu a:link {
+    color: silver;
+}
+    /* visited link */
+#menu a:visited {
+    color: silver;
+}
+
+    /* mouse over link */
+#menu a:hover {
+    color: white;
+}
+
+    /* selected link */
+#menu a:active {
+    color: silver;
+}
+
+#logonsector {
+    padding: 5px;
+    padding-right: 20px;
+		color: silver;
+    float: right;
+    vertical-align: top;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 85%;
+}
+#logonsector a{
+    font-family: sans;
+
+}
+
+#logonsector a:link {
+    color: silver;
+}
+    /* visited link */
+#logonsector a:visited {
+    color: silver;
+}
+
+    /* mouse over link */
+#logonsector a:hover {
+    color: white;
+}
+
+    /* selected link */
+#logonsector a:active {
+    color: silver;
+}
+
+#logonsector input{
+    maxlength="15" size="30"
+}
+
+#banner {
+
+        display: inline-block;
+}
+
+#top {
+       border: solid 1px black;
+
+}
+
+#content {
+       border: solid 1px black;
+
+}
+
+#info{
+    display: inline-block;
+    font-family: calibru;
+    font-size: 100%;
+    padding: 0% 0% 0% 25%;
+    color: silver;
+}
+#info a {
+  color: silver;
+   }
+#info a:link {
+    color: silver;
+}
+    /* visited link */
+#info a:visited {
+    color: silver;
+}
+
+    /* mouse over link */
+#info a:hover {
+    color: white;
+}
+
+    /* selected link */
+#info a:active {
+    color: silver;
+}

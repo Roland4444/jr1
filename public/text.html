@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<title>My first three.js app</title>
+		<style>
+				body { margin: 0; }
+			canvas { width: 120%; height: 120% }
+		</style>
+	</head>
+	<body>
+		<script src ="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.js"> </script>
+		<script src ="js/FiraSansEight_Regular.js"></script>
+		<script src="js/three.js"></script>
+		<script src="https://github.com/mrdoob/three.js/blob/master/examples/js/Detector.js"></script>
+		<script>
+		var gui = new dat.GUI();
+		gui.add(text, 'message');
+		gui.add(text, 'speed', -5, 5);
+		gui.add(text, 'displayOutline');
+		gui.add(text, 'explode');
+		};
+		var text_
+		var text__
+			var text = "aems",
+						height = 2,
+						size = 10,
+						curveSegments = 10,
+						bevelThickness = 1,
+						bevelSize = 0.3,
+						bevelSegments = 3,
+						bevelEnabled = true,
+						font = undefined
+				var renderer = new THREE.WebGLRenderer()
+				renderer.setSize(window.innerWidth, window.innerHeight)
+				document.body.appendChild(renderer.domElement)
+		//		var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 500)
+		//		camera.position.set(0, 0, 300)
+		//		camera.lookAt(new THREE.Vector3(0, 0, 0))
+
+		camera = new THREE.PerspectiveCamera(90, window.innerWidth/window.innerHeight, 10, 800);
+		camera.position.set(00, 00, 80);
+	//	camera.lookAt(new THREE.Vector3(0, 0, 0))
+				var scene = new THREE.Scene()
+				scene.fog	= new THREE.FogExp2( 0xd0e0f0, 0.0025 );
+
+
+		    // Adds some light, sets its position and adds it to the scene.
+		    var light333 = new THREE.HemisphereLight(0xfffff0, 0x101020, 1.5);
+		    light333.position.set( 0.75, 1, 0.25 );
+		    scene.add(light333);
+camera.lookAt(new THREE.Vector3( 0.75, 1, 0.25 ))
+	//			var material33	= new THREE.MeshBasicMaterial({ color: 0x101018 })
+	//			var geometry33	= new THREE.PlaneGeometry( 2000, 2000 )
+			//	var plane	= new THREE.Mesh( geometry33, material33 );
+			//	plane.rotation.x= - 90 * Math.PI / 180;
+		//		scene.add( plane );
+
+		var geometry = new THREE.SphereBufferGeometry( 300, 300, 300 );
+		var wireframe = new THREE.WireframeGeometry( geometry );
+		var line = new THREE.Line( wireframe );
+		line.material.depthTest = false;
+		line.material.opacity = 0.25;
+		line.material.transparent = true;
+		scene.add( line );
+				var geometry = new THREE.SphereGeometry( 10, 32, 32 )
+				var material = new THREE.MeshStandardMaterial( )
+				var sphere = new THREE.Mesh( geometry, material )
+
+				var geometry2 = new THREE.SphereGeometry( 10, 32, 32 )
+				var material2 = new THREE.MeshStandardMaterial( )
+				var sphere2 = new THREE.Mesh( geometry2, material2 )
+
+				var light = new THREE.PointLight( 0x551C9E, 1, 0,2 )
+				light.position.set( 50, 50, 50 )
+				var light2 = new THREE.PointLight( 0x6E5813, 1, 0,2 )
+				light2.position.set( -10, -10, -20 )
+				scene.add( light2 )
+				var light3 = new THREE.PointLight( 0xffffff, 1, 0,2 )
+				light3.position.set( 0, 0, 90 )
+				scene.add( light3 )
+				scene.add( light )
+				scene.add( sphere )
+				scene.add(sphere2)
+				var x =0
+				loadFont()
+				render()
+
+				function render() {
+					requestAnimationFrame( render )
+					x+=0.06
+					renderer.render(scene, camera)
+				//	sphere.translateX(2*Math.cos(x))
+				//	sphere.translateZ(0.8*Math.sin(x))
+					sphere.position.x = 90*Math.cos(x)
+					sphere.position.z=90*Math.sin(x)
+					sphere.position.y=1.2*x
+
+		//			sphere2.position.x = +90*Math.cos(x)
+		//			sphere2.position.z=90*Math.sin(x)*Math.cos(x)
+		//			sphere2.position.y=1.2*x
+//					sphere.translateY(4.2 * Math.sin(x))
+//		sphere.translateX(4.2 * Math.cos(x))
+
+//		var xc=	sphere2.position.x= ( 100*Math.sin(si)*Math.cos(phi))
+//		var yc=	sphere2.position.y=( 100*Math.sin(si)*Math.sin(phi))
+//		var zc= sphere2.position.z=( 100*Math.cos(phi))
+
+			//		sphere.y=6
+				}
+
+				function loadFont() {
+					var loader = new THREE.FontLoader()
+					loader.load( 'font/FiraSansUltra_Regular.json', function ( response ) {
+						font = response
+					//	alert("loaded!")
+						createText()
+					} )
+				}
+
+				function createText() {
+				//	alert("above textGeo")
+					textGeo = new THREE.TextGeometry( 'hello', {
+						font: font,
+						size: size,
+						height: height,
+						curveSegments:curveSegments,
+						weight: "normal",
+						bevelThickness:bevelThickness,
+						bevelSize:bevelSize,
+						bevelSegments:bevelSegments,
+						bevelEnabled:bevelEnabled
+					});
+				//	alert("below textGeo")
+					textGeo.computeBoundingBox();
+					textGeo.computeVertexNormals();
+					var material2 = new THREE.MeshStandardMaterial( )
+					text_ = new THREE.Mesh(textGeo, material2)
+					text_.position.x = 0
+					text_.position.y = 0
+					text_.position.z = 0
+				//		alert("adding...")
+					scene.add(text_)
+				//			alert("added1")
+				}
+</script>
+	</body>
+</html>

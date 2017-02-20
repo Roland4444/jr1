@@ -1,0 +1,11 @@
+#{extends 'template.html' /}
+#{set title:'Home' /}
+#{ if flash.error}
+<p style="color:#c00">
+    ${flash.error}
+</p>
+#{/if}
+
+
+
+#{welcome /}
